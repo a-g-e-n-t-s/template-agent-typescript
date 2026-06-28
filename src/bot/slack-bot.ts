@@ -369,7 +369,7 @@ export class SlackBot extends BaseBot {
    * Execute a KADI tool via broker with retry logic
    * @deprecated This method is unused in the current implementation (tools are invoked via invokeToolWithRetry)
    */
-  // @ts-ignore — reserved for future use
+  // @ts-expect-error — reserved for future use
   private async _executeKadiTool(
     toolName: string,
     input: Record<string, unknown>
@@ -612,7 +612,7 @@ export class SlackBot extends BaseBot {
    *
    * @deprecated This method is unused in the current implementation (tool use removed)
    */
-  // @ts-ignore — reserved for future use
+  // @ts-expect-error — reserved for future use
   private async _getAvailableTools(): Promise<Anthropic.Tool[]> {
     // 1. Get locally registered tools (tools on THIS agent)
     const localTools = this.client.readAgentJson().tools.map(tool => ({

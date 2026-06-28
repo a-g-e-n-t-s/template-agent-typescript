@@ -224,7 +224,7 @@ export class DiscordBot extends BaseBot {
             logger.info(MODULE_DISCORD_BOT, `Passing ${openaiTools.length} tools to LLM`, timer.elapsed('main'));
 
             // Step 5: Tool calling loop - keep calling until we get a final text response
-            let maxIterations = 10;
+            const maxIterations = 10;
             let iteration = 0;
             let finalResponse: string | null = null;
             let toolsExecuted = false; // Track if tools have been executed
@@ -638,7 +638,7 @@ export class DiscordBot extends BaseBot {
      * @deprecated This method is unused in the current implementation (tool use removed)
      * @returns Array of network tools in Anthropic format
      */
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+     
     private async queryNetworkTools(): Promise<Anthropic.Tool[]> {
         try {
             // Check if client is connected to any broker
@@ -693,7 +693,7 @@ export class DiscordBot extends BaseBot {
      *
      * @deprecated This method is unused in the current implementation (tool use removed)
      */
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+     
     private async getAvailableTools(): Promise<Anthropic.Tool[]> {
         // 1. Get locally registered tools (tools on THIS agent)
         const localTools = this.client.readAgentJson().tools.map(tool => ({
